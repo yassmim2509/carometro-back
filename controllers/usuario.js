@@ -12,10 +12,10 @@ exports.getById = async (req, res) => {
 };
 
 exports.createUsuario = async (req, res) => {
-    const usuarioCadastrado = await Usuario.findOne({ cpf: req.body.cpf });
+const usuarioCadastrado = await Usuario.findOne({ where: {cpf: req.body.cpf } });
     //verificação duplicidade de usuario cadastrado
     if (usuarioCadastrado) {
-        return red.send('Já existe um usuario cadastrado neste CPF.')
+        return res.send('Já existe um usuario cadastrado neste CPF.')
     }
 
     const usuarioCriado = await Usuario.create(req.body)

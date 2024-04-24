@@ -1,6 +1,6 @@
 // models/Usuario.js
 const Sequelize = require('sequelize');
-const sequelize = require('../config/seque"lize');
+const sequelize = require('../config/sequelize');
 
 const Usuario = sequelize.define('Usuarios', {
         //define as informações da tabela colunas
