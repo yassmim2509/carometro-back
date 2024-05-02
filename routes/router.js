@@ -11,8 +11,11 @@ const turmasController = require("../controllers/turmas")
 //retorna todos usuarios
 router.get('/usuario', usuarioController.getAll)
 router.get('/usuario/:id', usuarioController.getById)
+
 router.get('/turmas', turmasController.getAll)
 router.get('/turmas/:id', turmasController.getById)
+router.put('/turmas/:codigo', turmasController.updateTurma)//cria uma rota, assim que vc chamar ela vai funcionar
+
 
 //cria um usuario passando informações no body
 router.post('/turmas', turmasController.createTurmas)

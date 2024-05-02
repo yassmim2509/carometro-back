@@ -32,6 +32,22 @@ const turmaCadastrado = await Turmas.findOne({ where: {codigo: req.body.codigo }
         return res.send('Já existe uma turma cadastrada neste código.')
     }
 
+exports.updateTurma = async  (req, res) => {
+    const codigoTurma = req.params.updateTurma;
+    try{
+        const turmaCadastrado = await Turmas.findOne({where:{codigo: codigoTurma}});
+            if(turmaCadastrado){
+                delete req.body.codigo;
+                const [numRowsUpdated] = await Turmas.update(req.body,{
+                    where: { codigo: codigoTurma}
+                });
+            }
+    }//tenta conferir o código
+    catch{
+
+    }//se não der pega o error 
+} 
+//async:js fica rodando, espera pra chamar pra execultar
     const turmaCriada = await Turmas.create(req.body)
     console.log("turmaCriada", turmaCriada)
     return res.send("oi")
