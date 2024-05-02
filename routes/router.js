@@ -6,7 +6,6 @@ const router = express.Router();
 const usuarioController = require('../controllers/usuario')
 
 const turmasController = require("../controllers/turmas")
-const turmasController = require('../controllers/turmas')
 
 
 //retorna todos usuarios
