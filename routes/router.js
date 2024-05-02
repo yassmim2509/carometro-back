@@ -4,6 +4,7 @@
 const express = require('express');
 const router = express.Router();
 const usuarioController = require('../controllers/usuario')
+const turmasController = require('../controllers/turmas')
 
 //retorna todos usuarios
 router.get('/usuario', usuarioController.getAll)
@@ -14,8 +15,8 @@ router.post('/usuario', usuarioController.createUsuario)
 
 
 //INSERIR OUTRAS ROTAS -->
-/* router.get('/turmas', turmasController.getAll)
-router.get('/turma/:id', turmasController.getById) */
+router.get('/turmas', turmasController.getAll)
+router.get('/turma/:id', turmasController.getById) 
 
 /* router.get('/turmas', turmasController.getAll)
 router.get('/turmas/:id', turmasController.getById) */
