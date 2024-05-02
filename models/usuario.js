@@ -1,16 +1,17 @@
 // models/Usuario.js
+// models/Usuario.js
 const Sequelize = require('sequelize');
 const sequelize = require('../config/sequelize');
 
 const Usuario = sequelize.define('Usuarios', {
-        //define as informações da tabela colunas
+    //define as informações da tabela colunas
 
-        idUsuarios: {
-            type: Sequelize.INTEGER,
-            primaryKey: true, // Define essa coluna como a chave primária
-            autoIncrement: true // Indica que é uma chave primária autoincrementável
-        },
-    
+    idUsuarios: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true, // Define essa coluna como chave primária
+        primaryKey: true // Indica q é uma chave primaria autoincrementavel
+    },
+
     nome: Sequelize.STRING,
     email: Sequelize.STRING,
     cpf: Sequelize.STRING,
@@ -24,10 +25,12 @@ const Usuario = sequelize.define('Usuarios', {
     foto: Sequelize.STRING,
     Tipos_Usuarios_idTipos_Usuarios: Sequelize.NUMBER,
 
+
 },
 {
-    //precisa disso porque não tem as colunas createdAt e updatedAt no bd
-        timestamps: false // Adiciona colunas createdAt e updatedAt automaticamente
-    });
+    //precisa disso pq não tem as colunas createdAT e updateAt no bd
+        timestamps: false //Adiciona colunas createdAt e updateAt automaticamente
+
+});
 
 module.exports = Usuario;
